@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
@@ -10,6 +11,19 @@ public class PlayerMovement : MonoBehaviour {
     public float jumpSpeed;
     bool isJumping;
     bool isGrounded;
+    Sprite normalPosition;
+    public Sprite fallPosition;
+
+    public float tripTime;
+
+
+
+    bool isOcupied;
+    float timeToBeOcupied;
+    
+
+
+
 
     Rigidbody2D rb;
     private float horizontal;
@@ -19,12 +33,36 @@ public class PlayerMovement : MonoBehaviour {
     void Start() {
         rb = GetComponent<Rigidbody2D>();
         refernce = Vector2.zero;
+        timeToBeOcupied = 0;
+        isOcupied = false;
+        normalPosition = gameObject.GetComponent<SpriteRenderer>().sprite;
+        
+        
     }
 
     // Update is called once per frame
     void Update() {
-        horizontal = Input.GetAxisRaw("Horizontal");
-        isJumping = Input.GetButtonDown("Jump");
+
+        timeToBeOcupied -= Time.deltaTime;
+        timeToBeOcupied = Mathf.Max(0, timeToBeOcupied);
+        if(timeToBeOcupied==0)
+        {
+            isOcupied = false;
+            gameObject.GetComponent<SpriteRenderer>().sprite = normalPosition;
+        }
+
+
+
+        if (isOcupied == false)
+        {
+            horizontal = Input.GetAxisRaw("Horizontal");
+            isJumping = Input.GetButtonDown("Jump");
+        }
+        else
+        {
+            horizontal = 0;
+            isJumping = false;
+        }
     }
 
     private void FixedUpdate()
@@ -71,6 +109,15 @@ public class PlayerMovement : MonoBehaviour {
    private void Jump()
     {
         rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
+    }
+
+    public void Trip()
+    {
+        isOcupied = true;
+        gameObject.GetComponent<SpriteRenderer>().sprite = fallPosition;
+        timeToBeOcupied = tripTime;
+        
+
     }
 
 
