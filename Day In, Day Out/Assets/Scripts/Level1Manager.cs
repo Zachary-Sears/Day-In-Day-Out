@@ -27,7 +27,7 @@ public class Level1Manager : MonoBehaviour {
 		
 	}
 
-    private void updateHappyness(float adjustment)
+    private void UUpdateHappyness(float adjustment)
     {
         happyness += adjustment;
 
