@@ -29,6 +29,18 @@ public class PlayerMovement : MonoBehaviour {
 
     private void FixedUpdate()
     {
+        if(horizontal==-1)
+        {
+            gameObject.GetComponent<BoxCollider2D>().offset = new Vector2(-0.2f,0.1f);
+          
+            gameObject.GetComponent<SpriteRenderer>().flipX=true;
+        }
+        if (horizontal == 1)
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            gameObject.GetComponent<BoxCollider2D>().offset = new Vector2(0.2f, 0.1f);
+        }
+
         Vector2 targetvelocity = new Vector2(speed * horizontal, rb.velocity.y);
         rb.velocity = Vector2.SmoothDamp(rb.velocity, targetvelocity, ref refernce, movetime);
         if (isJumping)
@@ -42,7 +54,7 @@ public class PlayerMovement : MonoBehaviour {
         isGrounded = false;
         Collider2D[] beneath = Physics2D.OverlapBoxAll(
             new Vector2(transform.position.x, transform.position.y - 0.05f),
-            new Vector2(transform.localScale.x -0.1f,transform.localScale.y),
+            new Vector2(gameObject.GetComponent<BoxCollider2D>().size.x -0.1f, gameObject.GetComponent<BoxCollider2D>().size.y),
             0.0f
              );
         foreach ( Collider2D c in beneath)
