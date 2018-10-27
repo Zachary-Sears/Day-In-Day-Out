@@ -6,9 +6,13 @@ using UnityEngine.UI;
 public class UI_Manager : MonoBehaviour
 {
     public Image currentHappiness;
-    public Text text;
+    public Text timer;
     Level1Manager manager;
     public Text aMessage;
+
+    float minutes;
+    float hours;
+    
     
 
      private float happyMax;
@@ -18,12 +22,28 @@ public class UI_Manager : MonoBehaviour
     {
         //currentHappiness = GetComponent<Image>();
         manager = GetComponent<Level1Manager>();
-        text = GetComponent<Text>();
+        
         
         happyMax = 100f;
         maxHappiness = 100f;
         UpdateHappiness();
         aMessage.text = "Good Morning";
+        minutes = 0;
+        hours = 7;
+        timer.text = hours + ":" + minutes;
+
+    }
+
+    private void Update()
+    {
+        minutes += Time.deltaTime;
+        if(minutes >= 60)
+        {
+            hours++;
+            minutes = 0;
+        }
+        timer.text = hours + ":" + minutes;
+
 
     }
 
