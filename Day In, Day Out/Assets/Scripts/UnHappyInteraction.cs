@@ -19,6 +19,7 @@ public class UnHappyInteraction : MonoBehaviour {
         if(other.gameObject.CompareTag("Player"))
         {
             other.GetComponent<PlayerMovement>().Trip();
+
         }
     }
 }
