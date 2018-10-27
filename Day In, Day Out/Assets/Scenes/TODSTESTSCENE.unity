@@ -984,7 +984,42 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1514833560916256, guid: a3feade061754bc46a7883f30a9801ce,
     type: 2}
   m_PrefabInternal: {fileID: 177421133}
---- !u!224 &1230380897 stripped
+--- !u!95 &670024148
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 670024147}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &1230380896
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1230380897}
+  - component: {fileID: 1230380899}
+  - component: {fileID: 1230380898}
+  m_Layer: 5
+  m_Name: Happiness_Filler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1230380897
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224458152452633852, guid: f6c4e7ef494d4b945a96f1d5a55678c5,
     type: 2}
