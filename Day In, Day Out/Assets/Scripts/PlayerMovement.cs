@@ -31,14 +31,14 @@ public class PlayerMovement : MonoBehaviour {
     {
         if(horizontal==-1)
         {
-            gameObject.GetComponent<BoxCollider2D>().offset = new Vector2(-0.2f,0.1f);
+            gameObject.GetComponent<BoxCollider2D>().offset = new Vector2(-0.1f,0.1f);
           
             gameObject.GetComponent<SpriteRenderer>().flipX=true;
         }
         if (horizontal == 1)
         {
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
-            gameObject.GetComponent<BoxCollider2D>().offset = new Vector2(0.2f, 0.1f);
+            gameObject.GetComponent<BoxCollider2D>().offset = new Vector2(0.1f, 0.1f);
         }
 
         Vector2 targetvelocity = new Vector2(speed * horizontal, rb.velocity.y);
