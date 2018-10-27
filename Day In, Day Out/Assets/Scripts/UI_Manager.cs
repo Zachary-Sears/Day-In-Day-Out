@@ -8,6 +8,8 @@ public class UI_Manager : MonoBehaviour
     public Image currentHappiness;
     public Text text;
     Level1Manager manager;
+    public Text aMessage;
+    
 
      private float happyMax;
     private float maxHappiness;
@@ -21,6 +23,7 @@ public class UI_Manager : MonoBehaviour
         happyMax = 100f;
         maxHappiness = 100f;
         UpdateHappiness();
+        aMessage.text = "Good Morning";
 
     }
 
@@ -52,5 +55,10 @@ public class UI_Manager : MonoBehaviour
         happyMax += increaseHappiness;
         happyMax = Mathf.Min(100, happyMax);
         UpdateHappiness();
+    }
+
+    public void UpdateMessage(string message)
+    {
+        aMessage.text = message;
     }
 }
