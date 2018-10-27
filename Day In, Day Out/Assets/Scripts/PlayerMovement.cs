@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour {
 
     bool isOcupied;
     float timeToBeOcupied;
+    public GameObject canvas;
     
 
 
@@ -113,6 +114,7 @@ public class PlayerMovement : MonoBehaviour {
 
     public void Trip()
     {
+        canvas.GetComponent<UI_Manager>().DecreaseHappiness(50);
         isOcupied = true;
         gameObject.GetComponent<SpriteRenderer>().sprite = fallPosition;
         timeToBeOcupied = tripTime;
