@@ -28,10 +28,9 @@ public class UI_Manager : MonoBehaviour
     {
         while (manager.timeStart > 0)
         {
-            //text.manager.timeStart - 1 * Time.deltaTime;
+
         }
     }
-
     private void UpdateHappiness()
     {
         float ratio = happyMax / maxHappiness;
