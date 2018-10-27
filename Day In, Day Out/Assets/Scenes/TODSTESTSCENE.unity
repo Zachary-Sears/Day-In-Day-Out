@@ -1078,7 +1078,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b9b00f983e36a84caf1faa63456a4ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHappiness: {fileID: 0}
+  currentHappiness: {fileID: 1230380898}
 --- !u!114 &1868126015
 MonoBehaviour:
   m_ObjectHideFlags: 0

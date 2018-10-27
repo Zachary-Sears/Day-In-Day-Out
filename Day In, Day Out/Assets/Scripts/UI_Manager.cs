@@ -22,12 +22,12 @@ public class UI_Manager : MonoBehaviour
         currentHappiness.rectTransform.localScale = new Vector3(ratio, 1, 1);
     }
 
-    private void DecreaseHappiness(float decreaseHappiness)
+    public void DecreaseHappiness(float decreaseHappiness)
     {
         UpdateHappiness();
     }
 
-    private void IncreaseHappiness(float increaseHappiness)
+    public void IncreaseHappiness(float increaseHappiness)
     {
         UpdateHappiness();
     }
