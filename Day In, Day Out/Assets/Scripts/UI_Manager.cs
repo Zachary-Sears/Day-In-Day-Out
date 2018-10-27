@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class UI_Manager : MonoBehaviour
 {
     public Image currentHappiness;
+    public Text text;
+    Level1Manager manager;
 
      private float happyMax;
     private float maxHappiness;
@@ -13,11 +15,21 @@ public class UI_Manager : MonoBehaviour
     private void Start()
     {
         //currentHappiness = GetComponent<Image>();
+        manager = GetComponent<Level1Manager>();
+        text = GetComponent<Text>();
         
         happyMax = 100f;
         maxHappiness = 100f;
         UpdateHappiness();
 
+    }
+
+    private void UpdateTime()
+    {
+        while (manager.timeStart > 0)
+        {
+
+        }
     }
 
     private void UpdateHappiness()
