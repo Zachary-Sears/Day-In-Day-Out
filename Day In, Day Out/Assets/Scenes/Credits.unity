@@ -693,13 +693,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Programmers: Keven Sears & Caleb Meyer
+  m_Text: 'Programmers: Zachary Sears & Caleb Meyer
 
     Art: Aliana Thyvara'
 --- !u!222 &1865099477
