@@ -102,6 +102,9 @@ MonoBehaviour:
   speed: 4
   movetime: 0.2
   jumpSpeed: 4
+  fallPosition: {fileID: 21300000, guid: ee9881d14133457489e5742f9355084b, type: 3}
+  tripTime: 1.5
+  canvas: {fileID: 0}
 --- !u!212 &212273643051351838
 SpriteRenderer:
   m_ObjectHideFlags: 1
