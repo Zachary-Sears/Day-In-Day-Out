@@ -162,5 +162,10 @@ public class PlayerMovement : MonoBehaviour {
 
     }
 
+    public bool GetOcupied()
+    {
+        return isOcupied;
+    }
+
 
 }

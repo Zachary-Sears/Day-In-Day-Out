@@ -10,12 +10,14 @@ public class TvCoutch : MonoBehaviour {
     public GameObject canvas;
 
     bool canInteract;
+    
 
     public float footballTime;
 
     // Use this for initialization
     void Start () {
         canInteract = false;
+        
 	}
 	
 	// Update is called once per frame
@@ -50,8 +52,17 @@ public class TvCoutch : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        canInteract = true;
-        canvas.GetComponent<UI_Manager>().UpdateMessage("Press E to watch tv");
+
+        canInteract = !collision.GetComponent<PlayerMovement>().GetOcupied();
+
+         if(canInteract) canvas.GetComponent<UI_Manager>().UpdateMessage("Press E to watch tv");
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        canInteract = !other.GetComponent<PlayerMovement>().GetOcupied();
+
+       if(canInteract) canvas.GetComponent<UI_Manager>().UpdateMessage("Press E to watch tv");
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
