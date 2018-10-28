@@ -27,7 +27,7 @@ public class Kithchen_outside : MonoBehaviour {
                 player.transform.position = new Vector2(-8.4f, player.transform.position.y);
             }
 
-
+            gameObject.GetComponent<AudioSource>().Play();
 
 
 

@@ -18,6 +18,7 @@ public class UnHappyInteraction : MonoBehaviour {
     {
         if(other.gameObject.CompareTag("Player"))
         {
+            gameObject.GetComponent<AudioSource>().Play();
             other.GetComponent<PlayerMovement>().Trip();
 
         }

@@ -26,6 +26,7 @@ public class DoorLivingRoom_Outside : MonoBehaviour {
             {
                 player.transform.position = new Vector2(16f, player.transform.position.y);
             }
+            gameObject.GetComponent<AudioSource>().Play();
 
 
 

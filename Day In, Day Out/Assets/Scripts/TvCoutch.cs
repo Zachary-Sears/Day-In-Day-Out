@@ -22,7 +22,8 @@ public class TvCoutch : MonoBehaviour {
 	void Update () {
         if(canInteract&& Input.GetKeyDown(KeyCode.E))
         {
-            if( canvas.GetComponent<UI_Manager>().GetHour() < footballTime)
+            gameObject.GetComponent<AudioSource>().Play();
+            if ( canvas.GetComponent<UI_Manager>().GetHour() < footballTime)
             {
                 player.GetComponent<PlayerMovement>().Ocupied(sit, delay, "It was daytime television", 10, true);
                 canvas.GetComponent<UI_Manager>().AddHour(1);
@@ -33,6 +34,7 @@ public class TvCoutch : MonoBehaviour {
                 canvas.GetComponent<UI_Manager>().AddHour(1);
 
             }
+
 
 
 

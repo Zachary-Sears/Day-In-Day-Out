@@ -24,6 +24,7 @@ public class UpstairsDoor : MonoBehaviour {
             {
                 player.transform.position = new Vector2(4, player.transform.position.y);
             }
+            gameObject.GetComponent<AudioSource>().Play();
 
 
 

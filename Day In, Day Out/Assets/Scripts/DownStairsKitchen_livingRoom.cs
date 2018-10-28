@@ -26,6 +26,7 @@ public class DownStairsKitchen_livingRoom : MonoBehaviour {
             {
                 player.transform.position = new Vector2(0.2f, player.transform.position.y);
             }
+            gameObject.GetComponent<AudioSource>().Play();
 
 
 

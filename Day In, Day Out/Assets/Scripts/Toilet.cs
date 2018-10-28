@@ -24,6 +24,7 @@ public class Toilet : MonoBehaviour {
         if(canInteract&& Input.GetKeyDown(KeyCode.E))
         {
             player.GetComponent<PlayerMovement>().Ocupied(pee,delay, "That was a relief.", 5, false);
+            gameObject.GetComponent<AudioSource>().Play();
             alreadyUsed = true;
         }
 		

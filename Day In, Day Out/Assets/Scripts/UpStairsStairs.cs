@@ -20,7 +20,8 @@ public class UpStairsStairs : MonoBehaviour {
         {
             
                 player.transform.position = new Vector2(6, -7);
-            
+            gameObject.GetComponent<AudioSource>().Play();
+
 
         }
 

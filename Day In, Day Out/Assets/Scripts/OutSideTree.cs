@@ -23,6 +23,7 @@ public class OutSideTree : MonoBehaviour {
 	void Update () {
         if (canInteract && Input.GetKeyDown(KeyCode.E))
         {
+            gameObject.GetComponent<AudioSource>().Play();
             player.GetComponent<PlayerMovement>().Ocupied( delay, "That was a good apple", 10, false);
             alreadyUsed = true;
         }

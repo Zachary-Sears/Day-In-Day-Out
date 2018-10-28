@@ -81,6 +81,8 @@ public class kitchen : MonoBehaviour {
 
             }
 
+            gameObject.GetComponent<AudioSource>().Play();
+
 
 
 
