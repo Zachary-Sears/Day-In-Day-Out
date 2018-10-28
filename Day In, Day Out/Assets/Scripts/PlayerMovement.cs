@@ -123,5 +123,16 @@ public class PlayerMovement : MonoBehaviour {
 
     }
 
+    public void Ocupied(Sprite oSprite, float time, string oMessage, float decreseH)
+    {
+        canvas.GetComponent<UI_Manager>().DecreaseHappiness(decreseH);
+        isOcupied = true;
+        gameObject.GetComponent<SpriteRenderer>().sprite = oSprite;
+        timeToBeOcupied = time;
+        canvas.GetComponent<UI_Manager>().UpdateMessage(oMessage);
+
+
+    }
+
 
 }

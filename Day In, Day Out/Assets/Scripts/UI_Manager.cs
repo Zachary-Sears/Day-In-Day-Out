@@ -76,7 +76,7 @@ public class UI_Manager : MonoBehaviour
             if (minutes <= 0)
             {
                 hours--;
-                minutes = 60;
+                minutes = 59;
             }
             if (hours >= 12)
             {
