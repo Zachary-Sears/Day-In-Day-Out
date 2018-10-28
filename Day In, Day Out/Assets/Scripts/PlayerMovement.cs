@@ -138,7 +138,7 @@ public class PlayerMovement : MonoBehaviour {
         isOcupied = true;
         gameObject.GetComponent<SpriteRenderer>().sprite = oSprite;
         timeToBeOcupied = time;
-        canvas.GetComponent<UI_Manager>().UpdateMessage(oMessage);
+        
 
 
     }
@@ -157,7 +157,7 @@ public class PlayerMovement : MonoBehaviour {
         isOcupied = true;
         
         timeToBeOcupied = time;
-        canvas.GetComponent<UI_Manager>().UpdateMessage(oMessage);
+        
 
 
     }

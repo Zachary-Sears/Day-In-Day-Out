@@ -85,7 +85,7 @@ public class UI_Manager : MonoBehaviour
                 hours--;
                 minutes = 59;
             }
-            if (hours >= 12)
+            if (hours > 12)
             {
                 timer.text = "Sat " + (hours - 12f) + ":" + minutes.ToString("f0") + " PM";
 
@@ -161,6 +161,12 @@ public class UI_Manager : MonoBehaviour
     public float GetHour()
     {
         return hours;
+    }
+
+    public void AddHour(float add)
+    {
+        hours += add;
+
     }
 
 }
