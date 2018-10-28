@@ -1642,7 +1642,7 @@ Prefab:
     - target: {fileID: 114370493540234464, guid: 0e311c162a2081e498462cfe9821a2fa,
         type: 2}
       propertyPath: timeMultiplyer
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114370493540234464, guid: 0e311c162a2081e498462cfe9821a2fa,
         type: 2}
