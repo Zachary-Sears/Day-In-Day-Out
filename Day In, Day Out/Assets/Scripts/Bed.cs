@@ -11,6 +11,16 @@ public class Bed : MonoBehaviour {
     bool bedTime;
     public float timeForBed;
 
+    public float firstwarningTime;
+    bool FwarningGiven;
+
+    public float secondwarningTime;
+    bool SwarningGiven;
+
+    public float forcedSleep;
+
+    float currentTime;
+
 	// Use this for initialization
 	void Start () {
         bedTime = false;
@@ -20,14 +30,43 @@ public class Bed : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         bedTime = canvas.GetComponent<UI_Manager>().GetHour() >= timeForBed;
+        currentTime = canvas.GetComponent<UI_Manager>().GetHour();
 
-        if(isIntractable&& Input.GetKeyDown(KeyCode.E))
+        if (isIntractable&& Input.GetKeyDown(KeyCode.E))
         {
             DeterminWin();
 
         }
-		
-	}
+
+        if(currentTime>= firstwarningTime&&FwarningGiven==false)
+        {
+            canvas.GetComponent<UI_Manager>().UpdateBMessage("Time for bed", Color.green);
+            FwarningGiven = true;
+        }
+
+        if (currentTime >= secondwarningTime && SwarningGiven == false)
+        {
+            canvas.GetComponent<UI_Manager>().UpdateBMessage("It's really late go to bed!", Color.red);
+            canvas.GetComponent<UI_Manager>().DecreaseHappiness(5);
+            SwarningGiven = true;
+        }
+        if (currentTime >= forcedSleep)
+        {
+            canvas.GetComponent<UI_Manager>().UpdateBMessage("You fall over from exhuastion!!", Color.red);
+            canvas.GetComponent<UI_Manager>().DecreaseHappiness(15);
+
+            DeterminWin();
+        }
+
+
+
+
+
+
+
+
+
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

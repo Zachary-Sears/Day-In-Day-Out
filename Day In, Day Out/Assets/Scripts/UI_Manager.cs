@@ -12,6 +12,11 @@ public class UI_Manager : MonoBehaviour
     public Text aMessage;
     public Text bMessage;
 
+    public Text messagec;
+    public Text messaged;
+
+
+
     float minutes;
     float hours;
 
@@ -46,6 +51,8 @@ public class UI_Manager : MonoBehaviour
         UpdateHappiness();
         aMessage.text = "Good Morning";
         bMessage.text = "";
+        messagec.text = "";
+        messaged.text = "";
         minutes = 0;
         hours = 8;
         
@@ -145,6 +152,7 @@ public class UI_Manager : MonoBehaviour
 
     public void UpdateBMessage(string message, Color thecolor)
     {
+        UpdateMessageC(bMessage.text, bMessage.color);
         bMessage.color = thecolor;
 
         bMessage.text = message;
@@ -167,6 +175,19 @@ public class UI_Manager : MonoBehaviour
     {
         hours += add;
 
+    }
+
+    private void UpdateMessageC(string text, Color cl)
+    {
+        UpdateMessageD(messagec.text, messagec.color);
+        messagec.color = cl;
+        messagec.text = text;
+    }
+
+    private void UpdateMessageD(string text, Color cl)
+    {
+        messaged.color = cl;
+        messaged.text = text;
     }
 
 }
