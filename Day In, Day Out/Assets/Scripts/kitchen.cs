@@ -40,28 +40,41 @@ public class kitchen : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if ((canvas.GetComponent<UI_Manager>().GetHour() > breakfastEnd)&&hadBreakfast==false) player.GetComponent<PlayerMovement>().Ocupied(0, "You missed Breakfast", 15, true);
-        if ((canvas.GetComponent<UI_Manager>().GetHour() > lunchEnd) && hadLunch == false) player.GetComponent<PlayerMovement>().Ocupied(0, "You missed Lunch", 10, true);
-        if ((canvas.GetComponent<UI_Manager>().GetHour() > supperEnd) && hadsupper == false) player.GetComponent<PlayerMovement>().Ocupied(0, "You missed Supper", 5, true);
+        if ((canvas.GetComponent<UI_Manager>().GetHour() >= breakfastEnd) && hadBreakfast == false)
+        {
+            player.GetComponent<PlayerMovement>().Ocupied(0, "You missed Breakfast", 15, true);
+            hadBreakfast = true;
+
+        }
+        if ((canvas.GetComponent<UI_Manager>().GetHour() >= lunchEnd) && hadLunch == false)
+        {
+            player.GetComponent<PlayerMovement>().Ocupied(0, "You missed Lunch", 10, true);
+            hadLunch = true;
+        }
+        if ((canvas.GetComponent<UI_Manager>().GetHour() >= supperEnd) && hadsupper == false)
+        {
+            player.GetComponent<PlayerMovement>().Ocupied(0, "You missed Supper", 5, true);
+            hadsupper = true;
+        }
 
 
         float time = canvas.GetComponent<UI_Manager>().GetHour();
         if (canInteract && Input.GetKeyDown(KeyCode.E))
         {
 
-            if(time > breakfastBegin && time < breakfastEnd && hadBreakfast == false)
+            if(time >= breakfastBegin && time < breakfastEnd && hadBreakfast == false)
             {
                 hadBreakfast = true;
                 player.GetComponent<PlayerMovement>().Ocupied(cook, 0, "You had Breakfast", 10, false);
 
             }
 
-            if (time > lunchBegin && time < lunchEnd && hadLunch == false)
+            if (time >= lunchBegin && time < lunchEnd && hadLunch == false)
             {
                 hadLunch = true;
                 player.GetComponent<PlayerMovement>().Ocupied(cook, 0, "You had Lunch", 10, false);
             }
-            if (time > supperBegin && time < supperEnd && hadsupper == false)
+            if (time >= supperBegin && time < supperEnd && hadsupper == false)
             {
                 hadsupper = true;
                 player.GetComponent<PlayerMovement>().Ocupied(cook, 0, "You had Supper", 10, false);
@@ -88,7 +101,7 @@ public class kitchen : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision)
     {
         float time = canvas.GetComponent<UI_Manager>().GetHour();
-        if ( (time > breakfastBegin && time < breakfastEnd && hadBreakfast == false)||(time > lunchBegin && time < lunchEnd&&hadLunch==false)|| (time>supperBegin&&time<supperEnd&&hadsupper==false))
+        if ( (time >= breakfastBegin && time < breakfastEnd && hadBreakfast == false)||(time >= lunchBegin && time < lunchEnd&&hadLunch==false)|| (time>=supperBegin&&time<supperEnd&&hadsupper==false))
         {
             canvas.GetComponent<UI_Manager>().UpdateMessage("Press E to eat.");
             canInteract = true;

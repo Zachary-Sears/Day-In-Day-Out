@@ -54,7 +54,7 @@ public class TvCoutch : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        canInteract = true;
+        canInteract = false;
         canvas.GetComponent<UI_Manager>().UpdateMessage("");
 
     }
