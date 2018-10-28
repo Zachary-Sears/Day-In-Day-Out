@@ -12,6 +12,8 @@ public class UI_Manager : MonoBehaviour
 
     float minutes;
     float hours;
+
+    
     
     
 
@@ -29,20 +31,30 @@ public class UI_Manager : MonoBehaviour
         UpdateHappiness();
         aMessage.text = "Good Morning";
         minutes = 0;
-        hours = 7;
-        timer.text = hours + ":" + minutes;
+        hours = 8;
+        
+        timer.text = hours + ":" + minutes.ToString("f0")+"AM"; 
 
     }
 
     private void Update()
     {
         minutes += Time.deltaTime;
+        
         if(minutes >= 60)
         {
             hours++;
             minutes = 0;
         }
-        timer.text = hours + ":" + minutes;
+        if (hours >= 12)
+        {
+            timer.text = (hours - 12f) +":"+ minutes.ToString("f0") + "PM";
+
+        }
+        else
+        {
+            timer.text = hours + ":" + minutes.ToString("f0")+"AM";
+        }
 
 
     }

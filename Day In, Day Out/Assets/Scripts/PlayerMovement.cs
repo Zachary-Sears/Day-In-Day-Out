@@ -118,6 +118,7 @@ public class PlayerMovement : MonoBehaviour {
         isOcupied = true;
         gameObject.GetComponent<SpriteRenderer>().sprite = fallPosition;
         timeToBeOcupied = tripTime;
+        canvas.GetComponent<UI_Manager>().UpdateMessage("You Tripped");
         
 
     }
