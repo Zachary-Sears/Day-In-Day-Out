@@ -114,13 +114,6 @@ public class UI_Manager : MonoBehaviour
 
     }
 
-    private void UpdateTime()
-    {
-        while (manager.timeStart > 0)
-        {
-
-        }
-    }
     private void UpdateHappiness()
     {
          ratio = happyMax / maxHappiness;
