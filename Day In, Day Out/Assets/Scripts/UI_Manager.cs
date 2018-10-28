@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UI_Manager : MonoBehaviour
 {
@@ -13,9 +14,17 @@ public class UI_Manager : MonoBehaviour
     float minutes;
     float hours;
 
-    
-    
-    
+    public GameObject player;
+
+    bool inBed;
+
+
+    float ratio;
+
+
+
+
+
 
      private float happyMax;
     private float maxHappiness;
@@ -33,27 +42,60 @@ public class UI_Manager : MonoBehaviour
         minutes = 0;
         hours = 8;
         
-        timer.text = hours + ":" + minutes.ToString("f0")+"AM"; 
+        timer.text = hours + ":" + minutes.ToString("f0")+"AM";
+
+        inBed = false;
 
     }
 
     private void Update()
     {
-        minutes += Time.deltaTime;
-        
-        if(minutes >= 60)
+        if (inBed == false)
         {
-            hours++;
-            minutes = 0;
-        }
-        if (hours >= 12)
-        {
-            timer.text = (hours - 12f) +":"+ minutes.ToString("f0") + "PM";
+            minutes += Time.deltaTime;
 
+            if (minutes >= 60)
+            {
+                hours++;
+                minutes = 0;
+            }
+            if (hours >= 12)
+            {
+                timer.text = "Sat " + (hours - 12f) + ":" + minutes.ToString("f0") + " PM";
+
+            }
+            else
+            {
+                timer.text = "Sat " + hours + ":" + minutes.ToString("f0") + " AM";
+            }
         }
         else
         {
-            timer.text = hours + ":" + minutes.ToString("f0")+"AM";
+            minutes -= Time.deltaTime*100;
+
+            if (minutes <= 0)
+            {
+                hours--;
+                minutes = 60;
+            }
+            if (hours >= 12)
+            {
+                timer.text = "Sat " + (hours - 12f) + ":" + minutes.ToString("f0") + " PM";
+
+            }
+            else
+            {
+                timer.text = "Sat " + hours + ":" + minutes.ToString("f0") + " AM";
+            }
+
+        }
+
+        
+
+        if(hours<7)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
         }
 
 
@@ -68,7 +110,7 @@ public class UI_Manager : MonoBehaviour
     }
     private void UpdateHappiness()
     {
-        float ratio = happyMax / maxHappiness;
+         ratio = happyMax / maxHappiness;
        
 
 
@@ -93,4 +135,18 @@ public class UI_Manager : MonoBehaviour
     {
         aMessage.text = message;
     }
+
+    public void SetInBed()
+    {
+        inBed = true;
+    }
+    public float getRatio()
+    {
+        return ratio;
+    }
+    public float GetHour()
+    {
+        return hours;
+    }
+
 }
