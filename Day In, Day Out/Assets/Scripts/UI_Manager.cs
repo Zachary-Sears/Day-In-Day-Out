@@ -10,6 +10,7 @@ public class UI_Manager : MonoBehaviour
     public Text timer;
     Level1Manager manager;
     public Text aMessage;
+    public Text bMessage;
 
     float minutes;
     float hours;
@@ -20,6 +21,11 @@ public class UI_Manager : MonoBehaviour
 
 
     float ratio;
+
+    public float timeMultiplyer;
+
+    
+    
 
 
 
@@ -39,6 +45,7 @@ public class UI_Manager : MonoBehaviour
         maxHappiness = 100f;
         UpdateHappiness();
         aMessage.text = "Good Morning";
+        bMessage.text = "";
         minutes = 0;
         hours = 8;
         
@@ -52,7 +59,7 @@ public class UI_Manager : MonoBehaviour
     {
         if (inBed == false)
         {
-            minutes += Time.deltaTime;
+            minutes += Time.deltaTime*timeMultiplyer;
 
             if (minutes >= 60)
             {
@@ -134,6 +141,13 @@ public class UI_Manager : MonoBehaviour
     public void UpdateMessage(string message)
     {
         aMessage.text = message;
+    }
+
+    public void UpdateBMessage(string message, Color thecolor)
+    {
+        bMessage.color = thecolor;
+
+        bMessage.text = message;
     }
 
     public void SetInBed()

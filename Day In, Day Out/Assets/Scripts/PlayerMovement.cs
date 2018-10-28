@@ -118,15 +118,23 @@ public class PlayerMovement : MonoBehaviour {
         isOcupied = true;
         gameObject.GetComponent<SpriteRenderer>().sprite = fallPosition;
         timeToBeOcupied = tripTime;
-        canvas.GetComponent<UI_Manager>().UpdateMessage("You Tripped");
+        canvas.GetComponent<UI_Manager>().UpdateBMessage("You Tripped",Color.red);
         
 
     }
 
-    public void Ocupied(Sprite oSprite, float time, string oMessage, float decreseH,bool goodBad)
+    public void Ocupied(Sprite oSprite, float time, string oMessage, float decreseH,bool Bad)
     {
-        if(goodBad == true) canvas.GetComponent<UI_Manager>().DecreaseHappiness(decreseH);
-        if(goodBad == false) canvas.GetComponent<UI_Manager>().IncreaseHappiness(decreseH);
+        if (Bad == true)
+        {
+            canvas.GetComponent<UI_Manager>().DecreaseHappiness(decreseH);
+            canvas.GetComponent<UI_Manager>().UpdateBMessage(oMessage,Color.red);
+        }
+        if (Bad == false)
+        {
+            canvas.GetComponent<UI_Manager>().IncreaseHappiness(decreseH);
+            canvas.GetComponent<UI_Manager>().UpdateBMessage(oMessage,Color.green);
+        }
         isOcupied = true;
         gameObject.GetComponent<SpriteRenderer>().sprite = oSprite;
         timeToBeOcupied = time;
@@ -134,10 +142,18 @@ public class PlayerMovement : MonoBehaviour {
 
 
     }
-    public void Ocupied(float time, string oMessage, float decreseH, bool goodBad)
+    public void Ocupied(float time, string oMessage, float decreseH, bool Bad)
     {
-        if (goodBad == true) canvas.GetComponent<UI_Manager>().DecreaseHappiness(decreseH);
-        if (goodBad == false) canvas.GetComponent<UI_Manager>().IncreaseHappiness(decreseH);
+        if (Bad == true)
+        {
+            canvas.GetComponent<UI_Manager>().DecreaseHappiness(decreseH);
+            canvas.GetComponent<UI_Manager>().UpdateBMessage(oMessage, Color.red);
+        }
+        if (Bad == false)
+        {
+            canvas.GetComponent<UI_Manager>().IncreaseHappiness(decreseH);
+            canvas.GetComponent<UI_Manager>().UpdateBMessage(oMessage, Color.green );
+        }
         isOcupied = true;
         
         timeToBeOcupied = time;

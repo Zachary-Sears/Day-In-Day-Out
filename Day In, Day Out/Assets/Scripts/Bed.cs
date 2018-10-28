@@ -9,6 +9,7 @@ public class Bed : MonoBehaviour {
     public GameObject canvas;
     bool isIntractable;
     bool bedTime;
+    public float timeForBed;
 
 	// Use this for initialization
 	void Start () {
@@ -18,7 +19,7 @@ public class Bed : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        bedTime = canvas.GetComponent<UI_Manager>().GetHour() >= 9;
+        bedTime = canvas.GetComponent<UI_Manager>().GetHour() >= timeForBed;
 
         if(isIntractable&& Input.GetKeyDown(KeyCode.E))
         {
