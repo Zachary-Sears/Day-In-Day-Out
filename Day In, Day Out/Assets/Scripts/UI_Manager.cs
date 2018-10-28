@@ -44,7 +44,7 @@ public class UI_Manager : MonoBehaviour
     {
         //currentHappiness = GetComponent<Image>();
         manager = GetComponent<Level1Manager>();
-        
+
         happyMax = 100f;
         maxHappiness = 100f;
         UpdateHappiness();

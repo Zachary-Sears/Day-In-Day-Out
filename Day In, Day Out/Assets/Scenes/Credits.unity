@@ -739,8 +739,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 379.8, y: 114.8}
+  m_AnchoredPosition: {x: 17.1, y: 50}
+  m_SizeDelta: {x: 400, y: 233.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1865099476
 MonoBehaviour:
@@ -776,7 +776,11 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Programmers: Zachary Sears & Caleb Meyer
 
-    Art: Aliana Thyvara'
+    Art: Aliana Thyvara
+
+    Sound and Music: Legally downloaded from the internet.
+
+    (Freesound.com, DL Sound)'
 --- !u!222 &1865099477
 CanvasRenderer:
   m_ObjectHideFlags: 0
