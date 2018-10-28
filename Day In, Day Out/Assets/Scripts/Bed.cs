@@ -81,6 +81,17 @@ public class Bed : MonoBehaviour {
         
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (bedTime)
+        {
+            isIntractable = true;
+            canvas.GetComponent<UI_Manager>().UpdateMessage("Press E to go to Bed");
+        }
+
+    }
+
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         isIntractable = false;

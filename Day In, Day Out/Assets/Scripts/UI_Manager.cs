@@ -73,7 +73,7 @@ public class UI_Manager : MonoBehaviour
                 hours++;
                 minutes = 0;
             }
-            if (hours >= 12)
+            if (hours > 12)
             {
                 timer.text = "Sat " + (hours - 12f) + ":" + minutes.ToString("f0") + " PM";
 

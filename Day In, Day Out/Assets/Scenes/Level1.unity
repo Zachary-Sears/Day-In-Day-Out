@@ -853,6 +853,7 @@ MonoBehaviour:
   firstwarningTime: 22
   secondwarningTime: 23
   forcedSleep: 24
+  exuasted: {fileID: 21300000, guid: ee9881d14133457489e5742f9355084b, type: 3}
 --- !u!61 &1363056750
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1141,7 +1142,7 @@ Prefab:
     - target: {fileID: 224523624313777278, guid: 0e311c162a2081e498462cfe9821a2fa,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -469
+      value: -383
       objectReference: {fileID: 0}
     - target: {fileID: 114370493540234464, guid: 0e311c162a2081e498462cfe9821a2fa,
         type: 2}
@@ -2178,7 +2179,7 @@ MonoBehaviour:
   sit: {fileID: 21300000, guid: cf6cfc27ea4a65e46af9730b7ca4a55c, type: 3}
   delay: 2
   canvas: {fileID: 829575632}
-  footballTime: 10
+  footballTime: 19
 --- !u!61 &2009357365
 BoxCollider2D:
   m_ObjectHideFlags: 0
