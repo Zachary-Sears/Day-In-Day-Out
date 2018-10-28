@@ -21,6 +21,8 @@ public class Bed : MonoBehaviour {
 
     float currentTime;
 
+    public Sprite exuasted;
+
 	// Use this for initialization
 	void Start () {
         bedTime = false;
@@ -52,7 +54,7 @@ public class Bed : MonoBehaviour {
         }
         if (currentTime >= forcedSleep)
         {
-            canvas.GetComponent<UI_Manager>().UpdateBMessage("You fall over from exhuastion!!", Color.red);
+            player.GetComponent<PlayerMovement>().Ocupied(exuasted, 500,"You fell over from exaustion", 15, true);
             canvas.GetComponent<UI_Manager>().DecreaseHappiness(15);
 
             DeterminWin();
